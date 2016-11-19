@@ -12,7 +12,7 @@ const INITIAL_STATE = {
 };
 
 const modalReducer = (state = INITIAL_STATE, action) => {
-  console.log(action.modal)
+  console.log('what is action.modal', action.modal)
   switch(action.type) {
     case types.TOGGLE_MODAL:
       return {

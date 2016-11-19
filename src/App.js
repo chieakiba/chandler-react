@@ -1,14 +1,20 @@
 import React from 'react'
 import NavigationBar from './components/navbar'
 import Header from './components/header'
-import Footer from './components/footer'
+import About from './components/about'
+import Camp from './components/camp'
 import ModalContainer from './components/modal/modalContainer'
+import Contact from './components/contact'
+import Footer from './components/footer'
 
 const App = () => (
     <div>
       <NavigationBar />
       <Header/>
+      <About />
+      <Camp />
       <ModalContainer />
+      <Contact />
       <Footer/>
     </div>
 );

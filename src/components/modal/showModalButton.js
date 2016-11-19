@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button } from 'react-bootstrap'
-import modalComponent from './modalComponent'
+import ModalComponent from './modalComponent'
 
 const checkModal = obj => {
   const modalKeys = Object.keys(obj);
@@ -8,12 +8,12 @@ const checkModal = obj => {
   return obj[modalToShow]
 }
 
-const ShowModalButton = ({ modals, toggleModal, closeModal, onSubmit, submitForm }) => {
-  const theModal = checkModal(modals)
+const ShowModalButton = ({ modal, toggleModal, closeModal, submitRegistrationForm }) => {
+  const theModal = checkModal(modal)
   return (
     <div id="forms">
       <Button id="register-button" name="RegisterButton" bsSize="large" onClick={() => toggleModal('RegistrationModal')}>Register</Button>
-      <ModalComponent name={theModal ? theModal.modal : false} show={theModal ? theModal.show : false} title={theModal ? theModal.title : false} closeModal={() => closeModal()} submitForm={submitForm} />
+      <ModalComponent name={theModal ? theModal.modal : false} show={theModal ? theModal.show : false} title={theModal ? theModal.title : false} closeModal={() => closeModal()} submitRegistrationForm={submitRegistrationForm} />
     </div>
   )
 }

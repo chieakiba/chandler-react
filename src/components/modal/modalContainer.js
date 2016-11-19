@@ -1,10 +1,10 @@
 import { connect } from  'react-redux'
 import ShowModalButton from './showModalButton'
-import { toggleModal, closeModal, submitForm } from './modalActions'
+import { toggleModal, closeModal, submitRegistrationForm } from './modalActions'
 
 export default connect(
   state => ({
-    modals: state.modals.modal
+    modal: state.modal.modal
   }),
-  { toggleModal, closeModal, submitForm }
+  { toggleModal, closeModal, submitRegistrationForm }
 )(ShowModalButton);
