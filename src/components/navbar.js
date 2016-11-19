@@ -10,13 +10,13 @@ const NavigationBar = () => {
         </Navbar.Brand>
       </Navbar.Header>
       <Nav pullRight>
-      <NavItem eventKey={1} href="#">About</NavItem>
-      <NavItem eventKey={2} href="#">Camp Registration</NavItem>
-      <NavItem eventKey={3} href="#">Contact</NavItem>
+      <NavItem eventKey={1} href="./about.js">About</NavItem>
+      <NavItem eventKey={2} href="./camp.js">Camp Registration</NavItem>
+      <NavItem eventKey={3} href="./contact.js">Contact</NavItem>
       <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
-        <MenuItem eventKey={3.1}>About</MenuItem>
-        <MenuItem eventKey={3.2}>Camp Registration</MenuItem>
-        <MenuItem eventKey={3.3}>Contact</MenuItem>
+        <MenuItem eventKey={3.1} href="./about.js">About</MenuItem>
+        <MenuItem eventKey={3.2} href="./camp.js">Camp Registration</MenuItem>
+        <MenuItem eventKey={3.3} href="./contact.js">Contact</MenuItem>
       </NavDropdown>
     </Nav>
     </Navbar>
