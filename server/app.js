@@ -51,8 +51,8 @@ app.post('/send/confirmationmail', (req, res) => {
   const invitedContent = new helper.Content('text/html',
   //Need to change the body of this email. Discuss with owner
     'Name: ' + req.body.firstName + ' ' + req.body.lastName +
-    '<br>Instagram: ' + req.body.Instagram +
-    '<br>Email: ' + req.body.email
+    '<br>Email: ' + req.body.email +
+    '<br>Date of Birth: ' + req.body.dateOfBirth
   );
   const userInviteInfo = new helper.Mail(from_InviteEmail, subject_Invite, to_InviteEmail, invitedContent);
   const invitedInfo = sg.emptyRequest({

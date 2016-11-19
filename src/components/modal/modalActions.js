@@ -20,7 +20,7 @@ export const submitRegistrationForm = () => {
     let user = {
       firstName: form.values.firstName,
       lastName: form.values.lastName,
-      Instagram: form.values.Instagram,
+      email: form.values.email,
       dateOfBirth: form.values.dateOfBirth,
     }
     return axios.post('http://localhost:3001/send/confirmationmail', user)
