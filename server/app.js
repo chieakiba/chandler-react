@@ -2,6 +2,9 @@ import express from 'express'
 import bodyParser from 'body-parser'
 import morgan from 'morgan'
 import config from './../config'
+import mongoose from 'mongoose'
+
+mongoose.connect('mongodb://localhost/userdata')
 
 const helper = require('sendgrid').mail;
 const sg = require('sendgrid')(config.APIKEY);
