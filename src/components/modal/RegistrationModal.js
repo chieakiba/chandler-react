@@ -39,7 +39,7 @@ const RegistrationModal = ({ pristine, submitting, handleSubmit, submitRegistrat
   )
 
 export default reduxForm({
-  form: 'RegistrationForm',
+  form: 'RegistrationModalForm',
   validate,
   renderField
 })(RegistrationModal)

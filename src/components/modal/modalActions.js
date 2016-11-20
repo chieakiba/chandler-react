@@ -16,7 +16,7 @@ export const toggleModal = modal => ({
 
 export const submitRegistrationForm = () => {
   return (dispatch, getState) => {
-    let form = getState().form.RegistrationForm;
+    let form = getState().form.RegistrationModalForm;
     let user = {
       firstName: form.values.firstName,
       lastName: form.values.lastName,

@@ -1,18 +1,17 @@
 import React from 'react'
 import { combineReducers } from 'redux'
 import * as types from './modalActions'
-import modalForm from './modalForm'
+import RegistrationModal from './registrationFormContainer'
 
 const INITIAL_STATE = {
   RegistrationModal: {
     title: 'Join the club',
-    modal: <modalForm />,
+    modal: <RegistrationModal />,
     show: false,
   }
 };
 
 const modalReducer = (state = INITIAL_STATE, action) => {
-  console.log('what is action.modal', action.modal)
   switch(action.type) {
     case types.TOGGLE_MODAL:
       return {
