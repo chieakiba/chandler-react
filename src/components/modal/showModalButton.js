@@ -10,7 +10,6 @@ const checkModal = obj => {
 
 const ShowModalButton = ({ modal, toggleModal, closeModal, onSubmit, submitRegistrationForm }) => {
   const theModal = checkModal(modal)
-  console.log('{}{}', theModal)
   return (
     <div id="forms">
       <Button id="register-button" name="RegisterButton" bsSize="large" onClick={() => toggleModal('RegistrationModal')}>Register</Button>

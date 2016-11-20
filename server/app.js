@@ -67,6 +67,24 @@ app.post('/send/confirmationmail', (req, res) => {
     console.log(res.headers); // eslint-disable-line
     console.log(err); // eslint-disable-line
   });
+
+  //Add registered user information to Sendgrid contact database
+  const userInfo = sg.emptyRequest()
+  userInfo.body = [
+    {
+      "first_name": req.body.firstName,
+      "last_name": req.body.lastName,
+      "dateOfBirth": req.body.dateOfBirth,
+      "email": req.body.email
+    }
+  ]
+  userInfo.method = 'POST'
+  userInfo.path = '/v3/contactdb/recipients'
+  sg.API(userInfo, (error, response) => { // eslint-disable-line
+    console.log(response.statusCode) // eslint-disable-line
+    console.log(response.body) // eslint-disable-line
+    console.log(response.headers) // eslint-disable-line
+  })
   res.sendStatus(200)
 })
 
