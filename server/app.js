@@ -22,6 +22,10 @@ app.use('*', (req, res, next) => {
   next();
 });
 
+//Send user data to mongoDB
+
+//Send user data to Firebase
+
 //Send email to the owner and user when the user submits the request invite form
 app.post('/send/confirmationmail', (req, res) => {
   // ==============================

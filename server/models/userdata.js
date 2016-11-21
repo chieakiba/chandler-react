@@ -1,6 +1,10 @@
-import mongoose from 'mongoose'
+const mongoose = require('mongoose');
+
 var UserDataSchema = new mongoose.Schema({
-  user: {type: firstName, required: true}
+  firstName: {type: String, required: [true, 'First name is required']},
+  lastName: {type: String, require: [true, 'First name is required']},
+  email: {type: String, require: [true, 'Email is required']},
+  dateOfBirth: {type: Date, require: [true, 'Date of birth is required']}
 });
 
 var Users = mongoose.model('Users', UserDataSchema);
