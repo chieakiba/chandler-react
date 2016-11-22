@@ -3,6 +3,8 @@ import bodyParser from 'body-parser'
 import morgan from 'morgan'
 import config from './../config'
 import mongoose from 'mongoose'
+const Userdata = require('./models/userdata')
+const user
 
 mongoose.connect('mongodb://localhost/userdata')
 
@@ -23,7 +25,23 @@ app.use('*', (req, res, next) => {
 });
 
 //Send user data to mongoDB
-
+app.post('/send/userdata', (req, res) => {
+  Userdata.update({
+    user: {
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
+      email: req.body.email,
+      dateOfBirth: req.body.dateOfBirth
+    }
+  }, (err, user) => {
+    if(err) {
+      return res.status(500).json({
+        message: 'Internal server error'
+      });
+    }
+    res.status(201).json(user)
+  })
+})
 
 //Send email to the owner and user when the user submits the request invite form
 app.post('/send/confirmationmail', (req, res) => {
@@ -94,4 +112,4 @@ app.post('/send/confirmationmail', (req, res) => {
   res.sendStatus(200)
 })
 
-app.listen(3001, () => console.log('SERVER running on port 3001'));
+app.listen(process.env.PORT || 3001, process.env.IP () => console.log('SERVER running on port 3001'));

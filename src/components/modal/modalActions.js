@@ -33,5 +33,12 @@ export const submitRegistrationForm = () => {
         toastr.error('error', error)
         console.log('what is error', error)
       })
+    axios.post('http://localhost:3001/send/userdata', user)
+      .then(res => {
+        console.log('MongoDB res.data', res.data)
+      })
+      .catch(error => {
+        console.log('MongoDB error', error)
+      })
   }
 }
