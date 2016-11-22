@@ -26,7 +26,6 @@ app.use('*', (req, res, next) => {
 
 //Send user data to mongoDB
 app.post('/send/userdata', (req, res) => {
-  console.log('[][][][][]', req.body)
   User.create({
       firstName: req.body.firstName,
       lastName: req.body.lastName,
