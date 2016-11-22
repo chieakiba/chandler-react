@@ -7,6 +7,4 @@ var UserDataSchema = new mongoose.Schema({
   dateOfBirth: {type: Date, require: [true, 'Date of birth is required']}
 });
 
-var Users = mongoose.model('Users', UserDataSchema);
-
-module.exports = Users;
+module.exports = mongoose.model('Users', UserDataSchema);

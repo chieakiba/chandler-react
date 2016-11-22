@@ -3,18 +3,17 @@ import bodyParser from 'body-parser'
 import morgan from 'morgan'
 import config from './../config'
 import mongoose from 'mongoose'
-const Userdata = require('./models/userdata')
-const user
-
-mongoose.connect('mongodb://localhost/userdata')
+const Userdata = require('./models/userdata');
 
 const helper = require('sendgrid').mail;
 const sg = require('sendgrid')(config.APIKEY);
 const app = express()
 
-app.use(express.static('build/js'));
+mongoose.connect('mongodb://localhost/userdata')
+
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
+app.use(express.static('build/js'));
 app.use(morgan('dev'));
 
 app.use('*', (req, res, next) => {
@@ -112,4 +111,4 @@ app.post('/send/confirmationmail', (req, res) => {
   res.sendStatus(200)
 })
 
-app.listen(process.env.PORT || 3001, process.env.IP () => console.log('SERVER running on port 3001'));
+app.listen(process.env.PORT || 3001, () => console.log('SERVER running on port 3001'));

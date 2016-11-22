@@ -26,8 +26,8 @@ const renderField = ({ input, label, type, meta: { touched, error } }) => (
   </div>
 )
 
-const RegistrationModal = ({ pristine, submitting, handleSubmit, submitRegistrationForm }) => (
-    <Form id="registration-form" onSubmit={handleSubmit(submitRegistrationForm)}>
+const RegistrationModal = ({ pristine, submitting, handleSubmit, submitRegistrationForm, submitUserdata }) => (
+    <Form id="registration-form" onSubmit={handleSubmit(submitRegistrationForm, submitUserdata)}>
       <Field name="firstName" type="text" label="First Name" component={renderField} />
       <Field name="lastName" type="text" label="Last Name" component={renderField} />
       <Field name="email" type="email" label="Email address" component={renderField} />
