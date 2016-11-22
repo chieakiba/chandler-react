@@ -3,13 +3,14 @@ import bodyParser from 'body-parser'
 import morgan from 'morgan'
 import config from './../config'
 import mongoose from 'mongoose'
-const Userdata = require('./models/userdata');
+const User = require('./models/userdata');
+mongoose.Promise = global.Promise;
 
 const helper = require('sendgrid').mail;
 const sg = require('sendgrid')(config.APIKEY);
 const app = express()
 
-mongoose.connect('mongodb://localhost/userdata')
+mongoose.connect('mongodb://localhost:27017/userdata');
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
@@ -25,14 +26,14 @@ app.use('*', (req, res, next) => {
 
 //Send user data to mongoDB
 app.post('/send/userdata', (req, res) => {
-  Userdata.update({
-    user: {
+  console.log('[][][][][]', req.body)
+  User.create({
       firstName: req.body.firstName,
       lastName: req.body.lastName,
       email: req.body.email,
       dateOfBirth: req.body.dateOfBirth
-    }
   }, (err, user) => {
+    console.log(user)
     if(err) {
       return res.status(500).json({
         message: 'Internal server error'

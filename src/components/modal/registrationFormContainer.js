@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
 import RegistrationModal  from './RegistrationModal'
-import { submitRegistrationForm, submitUserdata } from './modalActions'
+import { submitRegistrationForm } from './modalActions'
 
-export default connect(null, { submitRegistrationForm, submitUserdata })(RegistrationModal)
+export default connect(null, { submitRegistrationForm })(RegistrationModal)

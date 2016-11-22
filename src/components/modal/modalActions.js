@@ -26,6 +26,7 @@ export const submitRegistrationForm = () => {
     return axios.post('http://localhost:3001/send/confirmationmail', user) //make sure the url is connected to the server droplet
       .then(res => {
         toastr.success('success', `Welcome ${user.firstName}`)
+        axios.post('http://localhost:3001/send/userdata', user)
         dispatch(closeModal())
         console.log('what is res.data', res.data)
       })
@@ -33,24 +34,25 @@ export const submitRegistrationForm = () => {
         toastr.error('error', error)
         console.log('what is error', error)
       })
+
   }
 }
 
-export const submitUserdata = () => {
-  return (dispatch, getState) => {
-    let form = getState().form.RegistrationModalForm;
-    let user = {
-      firstName: form.values.firstName,
-      lastName: form.values.lastName,
-      email: form.values.email,
-      dateOfBirth: form.values.dateOfBirth,
-    }
-    return axios.post('http://localhost:3001/send/userdata', user)
-      .then(res => {
-        console.log('MongoDB res.data', res.data)
-      })
-      .catch(error => {
-        console.log('MongoDB error', error)
-      })
-  }
-}
+// export const submitUserdata = () => {
+//   return (dispatch, getState) => {
+//     let form = getState().form.RegistrationModalForm;
+//     let user = {
+//       firstName: form.values.firstName,
+//       lastName: form.values.lastName,
+//       email: form.values.email,
+//       dateOfBirth: form.values.dateOfBirth,
+//     }
+//     return axios.post('http://localhost:3001/send/userdata', user)
+//       .then(res => {
+//         console.log('MongoDB res.data', res.data)
+//       })
+//       .catch(error => {
+//         console.log('MongoDB error', error)
+//       })
+//   }
+// }
