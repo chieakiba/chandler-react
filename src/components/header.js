@@ -6,8 +6,7 @@ const Header = () => {
     <div id="background">
       <header id="header">
         <Row className="show-grid text-center">
-          <img src="" alt="logo"/>
-          <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
+          <h1>Start With Passion, Finish With Success</h1>
         </Row>
       </header>
     </div>
