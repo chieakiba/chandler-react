@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button } from 'react-bootstrap'
+import { Button, Row, Col } from 'react-bootstrap'
 import ModalComponent from './modalComponent'
 
 const checkModal = obj => {
@@ -12,7 +12,11 @@ const ShowModalButton = ({ modal, toggleModal, closeModal, onSubmit, submitRegis
   const theModal = checkModal(modal)
   return (
     <div id="forms">
-      <Button id="register-button" name="RegisterButton" bsSize="large" onClick={() => toggleModal('RegistrationModal')}>Register</Button>
+      <Row className="show-grid text-center">
+        <Col lg={10} lgOffset={1} xs={10}>
+          <Button id="register-button" name="RegisterButton" bsSize="large" onClick={() => toggleModal('RegistrationModal')}>Register</Button>
+        </Col>
+      </Row>
       <ModalComponent name={theModal ? theModal.modal : false} show={theModal ? theModal.show : false} title={theModal ? theModal.title : false} closeModal={() => closeModal()} submitRegistrationForm={submitRegistrationForm} />
     </div>
   )

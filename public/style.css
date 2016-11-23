@@ -24,8 +24,38 @@
 }
 
 /*About*/
+#about {
+  margin-button: 2em;
+}
 
+#about h2, h4{
+  font-family: 'Roboto', sans-serif;
+}
+
+#about h3{
+  font-family: 'Yantramanav', sans-serif;
+}
 /*Camp*/
+#camp {
+  margin-bottom: 2em;
+}
+
+#camp h2{
+  font-family: 'Roboto', sans-serif;
+}
+
+#camp h3{
+  font-family: 'Yantramanav', sans-serif;
+}
+
+/*Forms*/
+#forms {
+  margin-bottom: 2em;
+}
+#forms button{
+  background-color: red;
+  color: white;
+}
 
 /*Contact*/
 
