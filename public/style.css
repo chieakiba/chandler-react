@@ -1,10 +1,10 @@
 /*Navbar*/
-.navbar-default {
+.navbar-default{
   background-color: transparent;
   border-color: transparent;
 }
 /*Header*/
-#header {
+#header{
   max-width: inherit;
   z-index: inherit;
   position: relative;
@@ -24,7 +24,7 @@
 }
 
 /*About*/
-#about {
+#about{
   margin-button: 2em;
 }
 
@@ -36,7 +36,7 @@
   font-family: 'Yantramanav', sans-serif;
 }
 /*Camp*/
-#camp {
+#camp{
   margin-bottom: 2em;
 }
 
@@ -49,7 +49,7 @@
 }
 
 /*Forms*/
-#forms {
+#forms{
   margin-bottom: 2em;
 }
 #forms button{
@@ -58,5 +58,14 @@
 }
 
 /*Contact*/
+#contact {
+  margin-bottom: 2em;
+}
 
+#contact h3{
+  font-family: 'Yantramanav', sans-serif;
+}
 /*Footer*/
+footer{
+  margin-bottom: 2em;
+}
