@@ -38,7 +38,7 @@ app.post('/send/userdata', (req, res) => {
         message: 'Internal server error'
       });
     }
-    res.status(201).json(user)
+    res.status(200).json(user)
   })
 })
 
@@ -113,4 +113,4 @@ app.post('/send/confirmationmail', (req, res) => {
 
 app.listen(process.env.PORT || 3001, () => console.log('SERVER running on port 3001'));
 
-exports.app = app
+module.exports = app
