@@ -112,3 +112,5 @@ app.post('/send/confirmationmail', (req, res) => {
 })
 
 app.listen(process.env.PORT || 3001, () => console.log('SERVER running on port 3001'));
+
+exports.app = app
