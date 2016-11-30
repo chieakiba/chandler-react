@@ -1,5 +1,5 @@
 import React from 'react'
-import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap'
+import { Navbar, Nav, NavItem } from 'react-bootstrap'
 
 const NavigationBar = () => {
   return (
@@ -15,11 +15,6 @@ const NavigationBar = () => {
             <NavItem eventKey={1} href="./about.js">About</NavItem>
             <NavItem eventKey={2} href="./camp.js">Camp Registration</NavItem>
             <NavItem eventKey={3} href="./contact.js">Contact</NavItem>
-            <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
-              <MenuItem eventKey={3.1} href="./about.js">About</MenuItem>
-              <MenuItem eventKey={3.2} href="./camp.js">Camp Registration</MenuItem>
-              <MenuItem eventKey={3.3} href="./contact.js">Contact</MenuItem>
-            </NavDropdown>
           </Nav>
         </Navbar.Collapse>
     </Navbar>

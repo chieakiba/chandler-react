@@ -5,7 +5,7 @@ const Contact = () => {
   return (
     <div id="contact">
       <Row className="show-grid text-center">
-        <Col lg={10} lgOffset={1} xs={10}>
+        <Col lg={10} lgOffset={1} xs={12}>
           <h3>booking@chandlerhoffman.com</h3>
         </Col>
       </Row>

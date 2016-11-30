@@ -5,7 +5,7 @@ const About = () => {
   return (
     <div id="about">
       <Row className="show-grid text-center">
-        <Col lg={10} lgOffset={1} xs={10}>
+        <Col lg={10} lgOffset={1} xs={12}>
           <h3>It starts with passion, a burning desire to be the best. At Hoffman Pro Camps we are committed to working with those who embody this belief. Passion is waking up early to get that extra training session in, passion is studying the game instead of just watching it, passion is skipping out on a party to get the rest your body needs, passion is realizing that if you are not putting in the proper work there is someone out there who is. You bring the passion, we’ll help you achieve success.</h3>
           <div className="MLS-Cup">
             <h2>My Story</h2>

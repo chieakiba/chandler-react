@@ -13,7 +13,7 @@ const ShowModalButton = ({ modal, toggleModal, closeModal, onSubmit, submitRegis
   return (
     <div id="forms">
       <Row className="show-grid text-center">
-        <Col lg={10} lgOffset={1} xs={10}>
+        <Col lg={10} lgOffset={1} xs={12}>
           <Button id="register-button" name="RegisterButton" bsSize="large" onClick={() => toggleModal('RegistrationModal')}>Register</Button>
         </Col>
       </Row>
