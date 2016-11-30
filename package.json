@@ -3,11 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "enzyme": "^2.6.0",
-    "react-addons-test-utils": "^15.4.1",
+    "chai": "^3.5.0",
+    "chai-http": "^3.0.0",
     "react-scripts": "0.7.0",
     "redux-logger": "^2.7.4",
-    "redux-mock-store": "^1.2.1",
     "supertest": "^2.0.1"
   },
   "dependencies": {
@@ -18,8 +17,6 @@
     "babel-preset-stage-0": "^6.16.0",
     "babel-register": "^6.18.0",
     "body-parser": "^1.15.2",
-    "chai": "^3.5.0",
-    "chai-http": "^3.0.0",
     "express": "^4.14.0",
     "mongodb": "^2.2.11",
     "mongoose": "^4.6.8",
@@ -34,13 +31,12 @@
     "redux-form": "^6.2.0",
     "redux-promise-middleware": "^4.1.0",
     "redux-thunk": "^2.1.0",
-    "request": "^2.78.0",
     "sendgrid": "^4.7.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "mocha --recursive --compilers js:babel-register",
+    "test": "mocha",
     "eject": "react-scripts eject"
   },
   "proxy": "http://localhost:3001",

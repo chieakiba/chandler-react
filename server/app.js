@@ -1,14 +1,14 @@
-import express from 'express'
-import bodyParser from 'body-parser'
-import morgan from 'morgan'
-import config from './../config'
-import mongoose from 'mongoose'
-const User = require('./models/userdata');
+var express = require('express')
+var bodyParser = require('body-parser')
+var morgan = require('morgan')
+var config = require('./../config')
+var mongoose = require('mongoose')
+var User = require('./models/userdata');
 mongoose.Promise = global.Promise;
 
-const helper = require('sendgrid').mail;
-const sg = require('sendgrid')(config.APIKEY);
-const app = express()
+var helper = require('sendgrid').mail;
+var sg = require('sendgrid')(config.APIKEY);
+var app = express()
 
 mongoose.connect('mongodb://localhost:27017/userdata');
 
@@ -25,13 +25,13 @@ app.use('*', (req, res, next) => {
 });
 
 //Send user data to mongoDB
-app.post('/send/userdata', (req, res) => {
+app.post('/send/userdata', function(req, res) {
   User.create({
       firstName: req.body.firstName,
       lastName: req.body.lastName,
       email: req.body.email,
       dateOfBirth: req.body.dateOfBirth
-  }, (err, user) => {
+  }, function(err, user) {
     console.log(user)
     if(err) {
       return res.status(500).json({
@@ -43,24 +43,24 @@ app.post('/send/userdata', (req, res) => {
 })
 
 //Send email to the owner and user when the user submits the request invite form
-app.post('/send/confirmationmail', (req, res) => {
+app.post('/send/confirmationmail', function(req, res) {
   // ==============================
   // SENGRID ~ EMAIL
   // ==============================
 
   //Send email to user when they submit
-  const fromEmail = new helper.Email('noreply@chandlerhoffman.com');
-  const toEmail = new helper.Email(req.body.email);
-  const subject = 'Thanks for registering to Hoffman Camp!';
-  const content = new helper.Content('text/html', `Hi ${req.body.firstName},<br><br>Thanks for registering to Hoffman Camp. Our team will review your application and contact you soon.`);
-  const mail = new helper.Mail(fromEmail, subject, toEmail, content);
-  const request = sg.emptyRequest({
+  var fromEmail = new helper.Email('noreply@chandlerhoffman.com');
+  var toEmail = new helper.Email(req.body.email);
+  var subject = 'Thanks for registering to Hoffman Camp!';
+  var content = new helper.Content('text/html', `Hi ${req.body.firstName},<br><br>Thanks for registering to Hoffman Camp. Our team will review your application and contact you soon.`);
+  var mail = new helper.Mail(fromEmail, subject, toEmail, content);
+  var request = sg.emptyRequest({
     method: 'POST',
     path: '/v3/mail/send',
     body: mail.toJSON(),
   });
 
-  sg.API(request, (err, res) => { // eslint-disable-line
+  sg.API(request, function(err, res) { // eslint-disable-line
     console.log(res.statusCode); // eslint-disable-line
     console.log(res.body); // eslint-disable-line
     console.log(res.headers); // eslint-disable-line
@@ -68,23 +68,23 @@ app.post('/send/confirmationmail', (req, res) => {
   });
 
   //Send invited user info to owner
-  const to_InviteEmail = new helper.Email(config.email);
-  const from_InviteEmail = new helper.Email(req.body.email);
-  const subject_Invite = 'New form submission from ' + req.body.firstName + ' ' + req.body.lastName;
-  const invitedContent = new helper.Content('text/html',
+  var to_InviteEmail = new helper.Email(config.email);
+  var from_InviteEmail = new helper.Email(req.body.email);
+  var subject_Invite = 'New form submission from ' + req.body.firstName + ' ' + req.body.lastName;
+  var invitedContent = new helper.Content('text/html',
   //Need to change the body of this email. Discuss with owner
     'Name: ' + req.body.firstName + ' ' + req.body.lastName +
     '<br>Email: ' + req.body.email +
     '<br>Date of Birth: ' + req.body.dateOfBirth
   );
-  const userInviteInfo = new helper.Mail(from_InviteEmail, subject_Invite, to_InviteEmail, invitedContent);
-  const invitedInfo = sg.emptyRequest({
+  var userInviteInfo = new helper.Mail(from_InviteEmail, subject_Invite, to_InviteEmail, invitedContent);
+  var invitedInfo = sg.emptyRequest({
     method: 'POST',
     path: '/v3/mail/send',
     body: userInviteInfo.toJSON(),
   });
 
-  sg.API(invitedInfo, (err, res) => { // eslint-disable-line
+  sg.API(invitedInfo, function(err, res) { // eslint-disable-line
     console.log(res.statusCode); // eslint-disable-line
     console.log(res.body); // eslint-disable-line
     console.log(res.headers); // eslint-disable-line
@@ -92,7 +92,7 @@ app.post('/send/confirmationmail', (req, res) => {
   });
 
   //Add registered user information to Sendgrid contact database
-  const userInfo = sg.emptyRequest()
+  var userInfo = sg.emptyRequest()
   userInfo.body = [
     {
       "first_name": req.body.firstName,
@@ -103,7 +103,7 @@ app.post('/send/confirmationmail', (req, res) => {
   ]
   userInfo.method = 'POST'
   userInfo.path = '/v3/contactdb/recipients'
-  sg.API(userInfo, (error, response) => { // eslint-disable-line
+  sg.API(userInfo, function(error, response) { // eslint-disable-line
     console.log(response.statusCode) // eslint-disable-line
     console.log(response.body) // eslint-disable-line
     console.log(response.headers) // eslint-disable-line
@@ -111,6 +111,6 @@ app.post('/send/confirmationmail', (req, res) => {
   res.sendStatus(200)
 })
 
-app.listen(process.env.PORT || 3001, () => console.log('SERVER running on port 3001'));
+app.listen(process.env.PORT || 3001);
 
-module.exports = app
+exports.app = app
