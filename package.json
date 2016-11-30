@@ -6,8 +6,7 @@
     "chai": "^3.5.0",
     "chai-http": "^3.0.0",
     "react-scripts": "0.7.0",
-    "redux-logger": "^2.7.4",
-    "supertest": "^2.0.1"
+    "redux-logger": "^2.7.4"
   },
   "dependencies": {
     "axios": "^0.15.2",
