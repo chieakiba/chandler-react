@@ -92,4 +92,23 @@ footer{
     margin-left: 2em;
     margin-right: 2em;
   }
+  .modal-sm {
+    width: 90%;
+  }
+  input {
+    border-width:1.5px;
+    color: rgba(171, 171, 171, 1);
+  }
+  #registration-form label {
+    margin-top: .5em;
+  }
+  #errorMessage {
+    color: red;
+  }
+  #submit {
+    margin-top: 1em;
+  }
+  .redux-toastr {
+    width: 85%;
+  }
 }
