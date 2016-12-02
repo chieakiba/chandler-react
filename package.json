@@ -30,6 +30,7 @@
     "redux-form": "^6.2.0",
     "redux-promise-middleware": "^4.1.0",
     "redux-thunk": "^2.1.0",
+    "request": "^2.79.0",
     "sendgrid": "^4.7.1"
   },
   "scripts": {

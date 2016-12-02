@@ -7,14 +7,14 @@ var User = require('./models/userdata');
 mongoose.Promise = global.Promise;
 
 var helper = require('sendgrid').mail;
-var sg = require('sendgrid')(config.APIKEY);
+var sg = require('sendgrid')(config.keys.APIKEY);
 var app = express()
 
 mongoose.connect('mongodb://localhost:27017/userdata');
 
+app.use(express.static('build/js'));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
-app.use(express.static('build/js'));
 app.use(morgan('dev'));
 
 app.use('*', (req, res, next) => {
@@ -49,10 +49,10 @@ app.post('/send/confirmationmail', function(req, res) {
   // ==============================
 
   //Send email to user when they submit
-  var fromEmail = new helper.Email('noreply@chandlerhoffman.com');
+  var fromEmail = new helper.Email('noreply@email.com');
   var toEmail = new helper.Email(req.body.email);
-  var subject = 'Thanks for registering to Hoffman Camp!';
-  var content = new helper.Content('text/html', `Hi ${req.body.firstName},<br><br>Thanks for registering to Hoffman Camp. Our team will review your application and contact you soon.`);
+  var subject = 'Thanks for registering!';
+  var content = new helper.Content('text/html', `Hi ${req.body.firstName},<br><br>Thanks for registering. Our team will review your application and contact you soon.`);
   var mail = new helper.Mail(fromEmail, subject, toEmail, content);
   var request = sg.emptyRequest({
     method: 'POST',
@@ -60,15 +60,15 @@ app.post('/send/confirmationmail', function(req, res) {
     body: mail.toJSON(),
   });
 
-  sg.API(request, function(err, res) { // eslint-disable-line
-    console.log(res.statusCode); // eslint-disable-line
-    console.log(res.body); // eslint-disable-line
-    console.log(res.headers); // eslint-disable-line
-    console.log(err); // eslint-disable-line
+  sg.API(request, function(err, res) {
+    console.log(res.statusCode);
+    console.log(res.body);
+    console.log(res.headers);
+    console.log(err);
   });
 
   //Send invited user info to owner
-  var to_InviteEmail = new helper.Email(config.email);
+  var to_InviteEmail = new helper.Email(config.keys.email);
   var from_InviteEmail = new helper.Email(req.body.email);
   var subject_Invite = 'New form submission from ' + req.body.firstName + ' ' + req.body.lastName;
   var invitedContent = new helper.Content('text/html',
@@ -111,6 +111,6 @@ app.post('/send/confirmationmail', function(req, res) {
   res.sendStatus(200)
 })
 
-app.listen(process.env.PORT || 3001);
+app.listen(process.env.PORT || 3001, () => console.log('SERVER running on port 3001'));
 
 exports.app = app
