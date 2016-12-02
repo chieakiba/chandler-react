@@ -8,7 +8,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Photo credit: https://unsplash.com/search/pigs?photo=UzbSX5-PeTE
 
-http://i.imgur.com/PIwa3wf.jpg
+![Imgur](http://i.imgur.com/PIwa3wf.jpg)
 
 ##How this works
 A modal shows up once the user clicks on the registration button.<br>
