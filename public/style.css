@@ -58,6 +58,12 @@
   background-color: red;
   color: white;
 }
+#errorMessage {
+  color: red;
+}
+#submit {
+  margin-top: 1em;
+}
 
 /*Contact*/
 #contact {
