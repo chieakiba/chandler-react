@@ -1,21 +1,22 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import NavigationBar from './components/navbar'
+import Header from './components/header'
+import About from './components/about'
+import Registration from './components/registration'
+import ModalContainer from './components/modal/modalContainer'
+import Contact from './components/contact'
+import Footer from './components/footer'
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
-}
+const App = () => (
+    <div>
+      <NavigationBar />
+      <Header/>
+      <About />
+      <Registration />
+      <ModalContainer />
+      <Contact />
+      <Footer/>
+    </div>
+);
 
-export default App;
+export default App
