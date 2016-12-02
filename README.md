@@ -12,18 +12,18 @@ Photo credit: https://unsplash.com/search/pigs?photo=UzbSX5-PeTE
 
 ##How this works
 A modal shows up once the user clicks on the registration button.<br>
-[Imgur](http://i.imgur.com/TjqVyDf.jpg)
+![Imgur](http://i.imgur.com/TjqVyDf.jpg)
 
 The form forces the user to enter all the input field information and if they don't, **REQUIRED** will show up in red at the bottom of the input field the user missed.<br>
-http://i.imgur.com/kGEhF2K.jpg
+![Imgur](http://i.imgur.com/kGEhF2K.jpg)
 
 Once the user finishes entering their information, the user will receive a response stating either the submission was successful or unsuccessful.
 
 **Example of a successful submission:**<br>
-http://i.imgur.com/UqGTWfJ.jpg
+![Imgur](http://i.imgur.com/1qRV0E7.jpg)
 
 **Example of an unsuccessful submission:**<br>
-http://i.imgur.com/1qRV0E7.jpg
+![Imgur](http://i.imgur.com/UqGTWfJ.jpg)
 
 If the submission was not successful, the modal will not disappear to allow the user to hit submit again.<br>
 If the submission is successful, the user will receive an email stating that their form was received. The owner of the website will also receive an email stating that a user submitted a form. The user information will also be sent to mongoDB, creating a new user data field in the collection.
