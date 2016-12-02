@@ -12,7 +12,7 @@ Photo credit: https://unsplash.com/search/pigs?photo=UzbSX5-PeTE
 
 ##How this works
 A modal shows up once the user clicks on the registration button.<br>
-http://i.imgur.com/TjqVyDf.jpg
+[Imgur](http://i.imgur.com/TjqVyDf.jpg)
 
 The form forces the user to enter all the input field information and if they don't, **REQUIRED** will show up in red at the bottom of the input field the user missed.<br>
 http://i.imgur.com/kGEhF2K.jpg
