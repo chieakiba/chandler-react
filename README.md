@@ -8,22 +8,22 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Photo credit: https://unsplash.com/search/pigs?photo=UzbSX5-PeTE
 
-https://cloud.githubusercontent.com/assets/17013004/20818885/8f87f9be-b7e5-11e6-8143-1fe0071908aa.jpg
+http://i.imgur.com/PIwa3wf.jpg
 
 ##How this works
 A modal shows up once the user clicks on the registration button.<br>
-https://cloud.githubusercontent.com/assets/17013004/20819043/aaaf5542-b7e6-11e6-96e5-3703291f2862.jpeg
+http://i.imgur.com/TjqVyDf.jpg
 
 The form forces the user to enter all the input field information and if they don't, **REQUIRED** will show up in red at the bottom of the input field the user missed.<br>
-https://cloud.githubusercontent.com/assets/17013004/20819044/aaaf961a-b7e6-11e6-88d5-5ce7b6bd522f.jpeg
+http://i.imgur.com/kGEhF2K.jpg
 
 Once the user finishes entering their information, the user will receive a response stating either the submission was successful or unsuccessful.
 
 **Example of a successful submission:**<br>
-https://cloud.githubusercontent.com/assets/17013004/20819041/aaac568a-b7e6-11e6-9c4c-d793ee94de75.jpeg
+http://i.imgur.com/UqGTWfJ.jpg
 
 **Example of an unsuccessful submission:**<br>
-https://cloud.githubusercontent.com/assets/17013004/20819045/aab1098c-b7e6-11e6-887a-e1b1d4b387ad.jpeg
+http://i.imgur.com/1qRV0E7.jpg
 
 If the submission was not successful, the modal will not disappear to allow the user to hit submit again.<br>
 If the submission is successful, the user will receive an email stating that their form was received. The owner of the website will also receive an email stating that a user submitted a form. The user information will also be sent to mongoDB, creating a new user data field in the collection.
