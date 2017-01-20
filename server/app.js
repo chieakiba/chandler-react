@@ -18,6 +18,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use(morgan('dev'));
 app.use(cors());
+app.use(express.static(__dirname, '..', 'build'));
 
 //Enabling CORS with dynamic origin
 var whitelist = ['http://localhost:3001']
