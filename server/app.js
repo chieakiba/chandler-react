@@ -11,10 +11,9 @@ var helper = require('sendgrid').mail;
 var sg = require('sendgrid')(config.keys.APIKEY);
 var app = express()
 
-mongoose.connect('mongodb://localhost:27017/userdata');
+mongoose.connect(config.keys.MONGODB_URI);
 
 app.use(express.static('public'));
-console.log(app.use(express.static('public')))
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use(morgan('dev'));
