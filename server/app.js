@@ -32,10 +32,6 @@ app.post('/send/userdata', cors(corsOptions), function (req, res, next) {
   res.json({msg: 'This is CORS-enabled for a whitelisted domain. You can now send post request of your data.'})
 })
 
-app.listen(3001, function () {
-  console.log('CORS-enabled web server listening on port 3001')
-})
-
 //Send user data to mongoDB
 app.post('/send/userdata', function(req, res) {
   User.create({
@@ -123,6 +119,6 @@ app.post('/send/confirmationmail', function(req, res) {
   res.sendStatus(200)
 })
 
-app.listen(process.env.PORT || 3001, () => console.log('SERVER running on port 3001'));
+app.listen(process.env.PORT || 3001);
 
 exports.app = app

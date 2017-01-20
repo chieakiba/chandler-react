@@ -16,7 +16,6 @@
     "babel-preset-stage-0": "^6.16.0",
     "babel-register": "^6.18.0",
     "body-parser": "^1.15.2",
-    "cors": "^2.8.1",
     "express": "^4.14.0",
     "mongodb": "^2.2.11",
     "mongoose": "^4.6.8",
@@ -35,7 +34,7 @@
     "sendgrid": "^4.7.1"
   },
   "scripts": {
-    "start": "node index.js",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "mocha",
     "eject": "react-scripts eject"
