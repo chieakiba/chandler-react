@@ -5,7 +5,7 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "chai-http": "^3.0.0",
-    "gh-pages": "^0.12.0",
+    "react-scripts": "0.7.0",
     "redux-logger": "^2.7.4"
   },
   "dependencies": {
@@ -26,7 +26,6 @@
     "react-dom": "^15.4.0",
     "react-redux": "^4.4.6",
     "react-redux-toastr": "^4.0.3",
-    "react-scripts": "0.7.0",
     "redux": "^3.6.0",
     "redux-form": "^6.2.0",
     "redux-promise-middleware": "^4.1.0",
@@ -35,14 +34,13 @@
     "sendgrid": "^4.7.1"
   },
   "scripts": {
-    "start": "npm run start",
-    "build": "npm run build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
     "test": "mocha",
-    "eject": "npm run eject"
+    "eject": "react-scripts eject"
   },
   "proxy": "http://localhost:3001",
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
-  "main": "index.js",
   "author": "Chie Akiba",
   "license": "ISC"
 }

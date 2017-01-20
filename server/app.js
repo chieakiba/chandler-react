@@ -13,7 +13,7 @@ var app = express()
 
 mongoose.connect('mongodb://localhost:27017/userdata');
 
-app.use(express.static(__dirname, 'build'));
+app.use(express.static(__dirname, 'public'));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use(morgan('dev'));
@@ -120,5 +120,3 @@ app.post('/send/confirmationmail', function(req, res) {
 })
 
 app.listen(process.env.PORT || 3001);
-
-exports.app = app
