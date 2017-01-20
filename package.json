@@ -1,8 +1,7 @@
 {
   "name": "official-web",
   "version": "0.1.0",
-  "private": true,
-  "homepage": "https://chieakiba.github.io/oinkster/",
+  "main": "index.js",
   "devDependencies": {
     "chai": "^3.5.0",
     "chai-http": "^3.0.0",
@@ -39,12 +38,12 @@
     "sendgrid": "^4.7.1"
   },
   "scripts": {
-    "dev": "react-scripts start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "mocha",
     "eject": "react-scripts eject",
-    "start": "nodemon index.js",
-    "deploy": "gh-pages -d build"
+    "prod": "NODE_ENV=production node index.js",
+    "postinstall": "webpack -p"
   },
   "proxy": "http://localhost:3001",
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
