@@ -11,7 +11,7 @@ var helper = require('sendgrid').mail;
 var sg = require('sendgrid')(config.keys.APIKEY);
 var app = express()
 
-mongoose.connect(config.keys.MONGODB_URI);
+mongoose.connect(config.keys.MONGODB_URI, ['oinkster'], {authMechanism: 'ScramSHA1'});
 
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended: false}));
