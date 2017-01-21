@@ -21,7 +21,7 @@ app.use(morgan('dev'));
 app.use(cors());
 
 //Enabling CORS with dynamic origin
-var whitelist = ['https://oinkster.herokuapp.com/']
+var whitelist = ['https://localhost:3001']
 var corsOptions = {
   origin: function (origin, callback) {
     var originIsWhitelisted = whitelist.indexOf(origin) !== -1
@@ -120,4 +120,4 @@ app.post('/send/confirmationmail', function(req, res) {
   res.sendStatus(200)
 })
 
-app.listen(process.env.PORT || 3001 || 'https://oinkster.herokuapp.com/');
+app.listen(process.env.PORT || 3001);
