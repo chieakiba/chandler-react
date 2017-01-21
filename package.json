@@ -39,7 +39,6 @@
   },
   "scripts": {
     "start": "node index.js",
-    "install": "cd client && npm install && npm run build && cd ..",
     "build": "react-scripts build",
     "test": "mocha",
     "eject": "react-scripts eject"
