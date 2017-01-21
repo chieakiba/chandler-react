@@ -1,10 +1,11 @@
 var express = require('express')
 var cors = require('cors')
 var bodyParser = require('body-parser')
+var path = requie('path');
 var morgan = require('morgan')
 var config = require('./../config')
 var mongoose = require('mongoose')
-var User = require('./models/userdata');
+var User = require('./models/userdata')
 mongoose.Promise = global.Promise;
 
 var helper = require('sendgrid').mail;
@@ -13,7 +14,7 @@ var app = express()
 
 mongoose.connect(config.keys.MONGODB_URI);
 
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'client/build')));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use(morgan('dev'));
