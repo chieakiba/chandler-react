@@ -38,9 +38,7 @@
     "sendgrid": "^4.7.1"
   },
   "scripts": {
-    "start": "npm run server",
-    "client": "react-scripts start",
-    "server": "node index.js",
+    "start": "node index.js",
     "build": "react-scripts build",
     "test": "mocha",
     "eject": "react-scripts eject"
