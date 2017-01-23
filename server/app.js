@@ -14,14 +14,17 @@ var app = express()
 
 mongoose.connect(config.keys.MONGODB_URI);
 
-app.use(express.static(path.join(__dirname, 'client/build')));
+app.use(express.static('build'));
+app.get('/', function(req, res) {
+  res.sendFile('index.html');
+});
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use(morgan('dev'));
 app.use(cors());
 
 //Enabling CORS with dynamic origin
-var whitelist = ['https://localhost:3001']
+// var whitelist = ['https://localhost:3001']
 var corsOptions = {
   origin: function (origin, callback) {
     var originIsWhitelisted = whitelist.indexOf(origin) !== -1

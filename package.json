@@ -1,5 +1,5 @@
 {
-  "name": "official-web",
+  "name": "Lookup-client",
   "version": "0.1.0",
   "main": "index.js",
   "devDependencies": {
@@ -38,13 +38,13 @@
     "sendgrid": "^4.7.1"
   },
   "scripts": {
-    "start": "node index.js",
+    "start": "react-scripts start",
+    "server": "node index.js",
     "build": "react-scripts build",
     "test": "mocha",
     "eject": "react-scripts eject"
   },
   "proxy": "https://localhost:3001",
-  "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
   "author": "Chie Akiba",
   "license": "ISC"
 }
