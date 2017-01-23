@@ -42,9 +42,7 @@
     "build": "react-scripts build",
     "test": "mocha",
     "eject": "react-scripts eject",
-    "proxy": {
-      "/send": "http://localhost:3001"
-      }
+    "proxy": "https://localhost:3001"
   },
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
   "author": "Chie Akiba",

@@ -21,7 +21,7 @@ app.use(morgan('dev'));
 app.use(cors());
 
 //Enabling CORS with dynamic origin
-var whitelist = ['http://localhost:3001']
+var whitelist = ['https://localhost:3001']
 var corsOptions = {
   origin: function (origin, callback) {
     var originIsWhitelisted = whitelist.indexOf(origin) !== -1
