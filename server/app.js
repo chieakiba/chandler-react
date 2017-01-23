@@ -14,7 +14,7 @@ var app = express()
 
 mongoose.connect(config.keys.MONGODB_URI);
 
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/build'));
 app.get('/send', function(req, res) {
   res.sendFile('index.html');
 });
