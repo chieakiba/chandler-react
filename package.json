@@ -8,7 +8,7 @@
     "redux-logger": "^2.7.4"
   },
   "engines": {
-    "node": "5.11.1"
+    "node": "7.0.0"
   },
   "dependencies": {
     "axios": "^0.15.2",
@@ -42,8 +42,10 @@
     "build": "react-scripts build",
     "test": "mocha",
     "eject": "react-scripts eject",
-    "proxy": "https://localhost:3001"
+    "install": "cd client && npm install && npm run build && cd ..",
+    "postinstall" : "npm run build"
   },
+  "proxy": "https://localhost:3001",
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
   "author": "Chie Akiba",
   "license": "ISC"
