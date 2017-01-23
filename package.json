@@ -43,7 +43,7 @@
     "test": "mocha",
     "eject": "react-scripts eject",
     "proxy": {
-      "/send": "https://localhost:3001"
+      "/send": "http://localhost:3001"
       }
   },
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
