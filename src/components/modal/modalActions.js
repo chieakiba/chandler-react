@@ -23,7 +23,7 @@ export const submitRegistrationForm = () => {
       email: form.values.email,
       dateOfBirth: form.values.dateOfBirth,
     }
-    return axios.post('https://localhost:3001/send/confirmationmail', user) //make sure the url is connected to the server droplet
+    return axios.post('https://localhost:3001/send/confirmationmail', user)
       .then(res => {
         toastr.success('success', `Welcome ${user.firstName}`)
         axios.post('https://localhost:3001/send/userdata', user)
