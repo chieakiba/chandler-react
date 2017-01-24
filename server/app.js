@@ -14,10 +14,15 @@ var app = express()
 
 mongoose.connect(config.keys.MONGODB_URI);
 
-app.use(express.static(__dirname + '/build'));
-app.get('/send', function(req, res) {
-  res.sendFile('index.html');
-});
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('build'));
+  app.get('/', function(req, res) {
+    res.sendFile(path.join(__dirname, '../build/index.html'));
+  });
+} else {
+  app.use(express.static('public'));
+}
+
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use(morgan('dev'));
