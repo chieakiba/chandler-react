@@ -37,10 +37,6 @@ var corsOptions = {
   }
 }
 
-app.post('/send/userdata', cors(corsOptions), function (req, res, next) {
-  res.json({msg: 'This is CORS-enabled for a whitelisted domain. You can now send post request of your data.'})
-})
-
 //Send user data to mongoDB
 app.post('/send/userdata', function(req, res) {
   User.create({
