@@ -27,6 +27,10 @@ export const submitRegistrationForm = () => {
       .then(res => {
         toastr.success('success', `Welcome ${user.firstName}`)
         axios.post('/send/userdata', user)
+          .then(
+            res => console.log(res),
+            err => console.log(err)
+          )
         dispatch(closeModal())
         console.log('what is res.data', res.data)
       })
