@@ -5,7 +5,8 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "chai-http": "^3.0.0",
-    "redux-logger": "^2.7.4"
+    "redux-logger": "^2.7.4",
+    "rimraf": "^2.5.4"
   },
   "engines": {
     "node": "7.0.0"
@@ -39,7 +40,8 @@
   },
   "scripts": {
     "start": "NODE_ENV=production node index.js",
-    "build": "react-scripts NODE_ENV=production build",
+    "build": "npm run clean && NODE_ENV=production react-scripts build",
+    "clean": "rimraf build",
     "test": "mocha",
     "eject": "react-scripts eject"
   },
