@@ -5,10 +5,13 @@ import logger from 'redux-logger'
 import Reducers from './reducers'
 
 const middleware = [
-  logger(),
   ReduxThunk,
   promiseMiddleware()
 ]
+
+if (process.env.NODE_ENV !== 'production') {
+  middleware.push(logger());
+}
 
 const enhancers = compose(
   applyMiddleware(...middleware),
