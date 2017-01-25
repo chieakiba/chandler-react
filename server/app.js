@@ -26,16 +26,6 @@ if (process.env.NODE_ENV === 'production') {
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use(morgan('dev'));
-app.use(cors());
-
-//Enabling CORS with dynamic origin
-// var whitelist = ['https://localhost:3001']
-var corsOptions = {
-  origin: function (origin, callback) {
-    var originIsWhitelisted = whitelist.indexOf(origin) !== -1
-    callback(originIsWhitelisted ? null : 'Bad Request', originIsWhitelisted)
-  }
-}
 
 //Send user data to mongoDB
 app.post('/send/userdata', function(req, res) {
